@@ -132,16 +132,6 @@ public class Teste {
         }
     }
 
-    private static void mostrarDadosEntrega() {
-        System.out.println("\n===== DADOS DA ENTREGA =====");
-        System.out.println("Nome do projeto: ReservaFacil Restaurante");
-        System.out.println("Alunos: Giovana Gomes Pavese e Caio Magno Borges Fernandes");
-        System.out.println("Link do Drive: preencher antes da entrega");
-        System.out.println("Projeto em execucao: classe restaurante.Teste");
-        System.out.println("Objetos ja construidos: 2 clientes, 1 funcionario, 4 mesas e 2 reservas.");
-        System.out.println("===========================\n");
-    }
-
     private static void cadastrarCliente() {
         System.out.println("\n--- Cadastrar Cliente ---");
         System.out.print("Nome: ");
