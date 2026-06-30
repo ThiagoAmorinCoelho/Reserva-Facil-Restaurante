@@ -1,0 +1,99 @@
+classDiagram
+class Verificavel {
+    <<interface>>
+    +validar(String codigo) boolean
+    +solicitarNovo() void
+}
+
+class Endereco {
+    -String rua
+    -int numero
+    -String bairro
+    -String cidade
+    -String cep
+    +Endereco(String rua, int numero, String bairro, String cidade, String cep)
+    +Endereco(String cidade)
+}
+
+class Pessoa {
+    <<abstract>>
+    -String nome
+    -String cpf
+    -String telefone
+    -Endereco endereco
+    +validar(String cpf) boolean
+    +solicitarNovo() void
+    +exibirDados() String
+}
+
+class Cliente {
+    -String email
+    +exibirDados() String
+}
+
+class Funcionario {
+    -String cargo
+    -String matricula
+    +exibirDados() String
+}
+
+class Restaurante {
+    -String nome
+    -Endereco endereco
+    -ArrayList~Mesa~ mesas
+    +adicionarMesa(Mesa mesa) void
+    +listarMesas() void
+}
+
+class Mesa {
+    <<abstract>>
+    -int numero
+    -int capacidade
+    -boolean disponivel
+    +verificarDisponibilidade() boolean
+    +reservar() void
+    +cancelarReserva() void
+    +descricao() String
+}
+
+class MesaInterna {
+    -String setor
+    +descricao() String
+}
+
+class MesaExterna {
+    -boolean coberta
+    +descricao() String
+}
+
+class Reserva {
+    -int codigo
+    -Cliente cliente
+    -Mesa mesa
+    -String data
+    -String horario
+    -int quantidadePessoas
+    -String status
+    +confirmarReserva() void
+    +cancelarReserva() void
+    +compareTo(Reserva reserva) int
+}
+
+class ControleReserva~T~ {
+    -T codigoControle
+    -ArrayList~Reserva~ listaReservas
+    +adicionarReserva(Reserva reserva) void
+    +imprimirReservas() void
+}
+
+Verificavel <|.. Pessoa
+Pessoa <|-- Cliente
+Pessoa <|-- Funcionario
+Mesa <|-- MesaInterna
+Mesa <|-- MesaExterna
+Pessoa --> Endereco
+Restaurante --> Endereco
+Restaurante --> Mesa
+Reserva --> Cliente
+Reserva --> Mesa
+ControleReserva --> Reserva

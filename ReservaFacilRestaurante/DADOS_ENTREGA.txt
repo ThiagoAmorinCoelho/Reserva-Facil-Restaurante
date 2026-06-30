@@ -1,0 +1,5 @@
+Nome do projeto: ReservaFacil Restaurante
+Alunos: Giovana Gomes Pavese e Caio Magno Borges Fernandes
+Diagrama de classes: arquivo diagramas/diagrama_de_classes_uml_detalhado.png
+Link do Drive: preencher antes da entrega
+Classe principal para executar: restaurante.Teste
